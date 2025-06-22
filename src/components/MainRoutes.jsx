@@ -5,6 +5,8 @@ import Product from "./Product";
 import About from "./About";
 import Services from "./Services";
 import ProductDetail from "./ProductDetail";
+import ServiceDetail from "./ServiceDetail";
+import ServiceUpdate from "./ServiceUpdate";
 
 const MainRoutes = () => {
   return (
@@ -12,7 +14,11 @@ const MainRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route path="/product" element={<Product />} />
       <Route path="/product/detail/:name" element={<ProductDetail />} />
-      <Route path="/service" element={<Services />} />
+      <Route path="/service" element={<Services />}>
+        <Route path="/service/detail" element={<ServiceDetail />} />
+        <Route path="/service/update" element={<ServiceUpdate />} />
+      </Route>
+
       <Route path="/about" element={<About />} />
     </Routes>
   );
